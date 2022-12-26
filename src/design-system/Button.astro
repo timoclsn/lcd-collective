@@ -11,6 +11,7 @@ const buttonVariants = cva(
     "px-6",
     "py-4",
     "whitespace-nowrap",
+    "hover:opacity-80",
   ],
   {
     variants: {
@@ -47,18 +48,12 @@ const buttonVariants = cva(
       {
         variant: "contained",
         color: "primary",
-        class: [
-          "text-primary-contrast-text bg-primary-main-bg",
-          "hover:bg-primary-hover-bg",
-        ],
+        class: "text-white bg-button",
       },
       {
         variant: "text",
         color: "primary",
-        class: [
-          "text-primary-main-text",
-          "hover:text-primary-hover-text hover:bg-primary-ghost-bg",
-        ],
+        class: "text-button",
       },
     ],
   }
