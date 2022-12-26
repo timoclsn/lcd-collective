@@ -1,0 +1,32 @@
+---
+import Container from "../design-system/Container.astro";
+import Heading from "../design-system/Heading.astro";
+import Text from "../design-system/Text.astro";
+---
+
+<header>
+  <Container inset className="py-6">
+    <nav>
+      <ul class="flex gap-4 sm:gap-10 items-center">
+        <li class="flex-1">
+          <a href="/">
+            <Heading as="span" level="4">Life-centered Design</Heading><br />
+            <Heading as="span" level="4"
+              ><span style="font-weight: 400;">Collective</span>
+            </Heading>
+          </a>
+        </li>
+        <li>
+          <a href="/#about">
+            <Text>About us</Text>
+          </a>
+        </li>
+        <li>
+          <a href="/#principles">
+            <Text>Principles</Text>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </Container>
+</header>

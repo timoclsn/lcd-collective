@@ -1,0 +1,41 @@
+---
+import Container from "../design-system/Container.astro";
+import Heading from "../design-system/Heading.astro";
+import Text from "../design-system/Text.astro";
+import Person from "./Person.astro";
+
+const friends = [
+  {
+    name: "Madeleine van Venetie",
+    text: "Senior User Experience Designer",
+    links: [],
+  },
+];
+---
+
+<section id="team" class="bg-collective-grey">
+  <Container inset className="pt-20 pb-32">
+    <Heading level="2" className="text-collective-text mb-4">
+      Friends of the collective
+    </Heading>
+    <Text as="p" size="large" className="text-collective-text-light mb-20">
+      The people supporting the Life Centered Design Collective whenever
+      possible:
+    </Text>
+    <ul
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-20"
+    >
+      {
+        friends.map((freind) => (
+          <li>
+            <Person
+              name={freind.name}
+              description={freind.text}
+              links={freind.links}
+            />
+          </li>
+        ))
+      }
+    </ul>
+  </Container>
+</section>

@@ -1,0 +1,49 @@
+---
+import { cva, type VariantProps } from "class-variance-authority";
+
+const validElements = [
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "p",
+  "ul",
+  "ol",
+  "span",
+  "strong",
+  "small",
+  "label",
+] as const;
+type ValidElements = typeof validElements[number];
+
+const textVariants = cva("font-sans", {
+  variants: {
+    size: {
+      medium: "text-base",
+      large: "text-2xl",
+    },
+    weight: {
+      normal: "font-normal",
+      bold: "font-bold",
+    },
+  },
+});
+
+interface Props extends VariantProps<typeof textVariants> {
+  as?: ValidElements;
+  className?: string;
+}
+
+const {
+  as: Element = "span",
+  size = "medium",
+  weight = "normal",
+  className,
+} = Astro.props;
+---
+
+<Element class={textVariants({ size, weight, class: className })}>
+  <slot />
+</Element>

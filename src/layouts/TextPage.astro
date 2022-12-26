@@ -1,0 +1,20 @@
+---
+import Container from "../design-system/Container.astro";
+import Heading from "../design-system/Heading.astro";
+import Layout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title="Imprint" slug="imprint">
+  <Container inset>
+    <section class="space-y-20 max-w-prose mx-auto">
+      <Heading level="1" className="mb-6">
+        {frontmatter.title}
+      </Heading>
+      <div class="prose">
+        <slot />
+      </div>
+    </section>
+  </Container>
+</Layout>

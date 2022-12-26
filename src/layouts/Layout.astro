@@ -1,35 +1,54 @@
 ---
-export interface Props {
-	title: string;
+import "@fontsource/dm-sans/400-italic.css";
+import "@fontsource/dm-sans/400.css";
+import "@fontsource/dm-sans/700-italic.css";
+import "@fontsource/dm-sans/700.css";
+import "@fontsource/source-serif-4/variable.css";
+import Favicons from "../components/Favicons.astro";
+import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
+import SEO from "../components/SEO.astro";
+import "../theme/resources.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  slug?: string;
+  previewImage?: string;
 }
 
-const { title } = Astro.props;
+const { title, description, previewImage, slug } = Astro.props;
+
+const defaultTitle = "Life Centered Design Collective";
+const pageTitle = !title ? defaultTitle : `${title}  |  ${defaultTitle}`;
+const pageDescription = description
+  ? description
+  : "Life Centered Design Collective";
+const newSlug = slug ? `/${slug}` : "";
+const pagePreviewImage = previewImage ? previewImage : "og-image.png";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <SEO
+      title={pageTitle}
+      description={pageDescription}
+      slug={newSlug}
+      previewImage={pagePreviewImage}
+    />
+    <Favicons />
+    <Navigation />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
-</style>

@@ -1,0 +1,38 @@
+---
+import { cva, type VariantProps } from "class-variance-authority";
+
+const validElements = ["h1", "h2", "h3", "h4", "span"] as const;
+type ValidElements = typeof validElements[number];
+
+const headingVariants = cva("font-serif font-bold", {
+  variants: {
+    level: {
+      "1": "text-3xl sm:text-7xl",
+      "2": "text-4xl",
+      "3": "text-xl sm:text-3xl",
+      "4": "text-2xl",
+      "5": "text-base",
+    },
+    uppercase: {
+      true: "uppercase",
+    },
+  },
+});
+
+interface Props extends VariantProps<typeof headingVariants> {
+  as?: ValidElements;
+  title?: string;
+  className?: string;
+}
+
+const { as, level = "2", title, uppercase, className } = Astro.props;
+
+const Element = as ? as : (`h${level}` as ValidElements);
+---
+
+<Element
+  title={title}
+  class={headingVariants({ level, uppercase, class: className })}
+>
+  <slot />
+</Element>

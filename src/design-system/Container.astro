@@ -1,0 +1,19 @@
+---
+import { cva, type VariantProps } from "class-variance-authority";
+
+const containerVariants = cva("mx-auto max-w-screen-2xl w-full", {
+  variants: {
+    inset: {
+      true: "px-6 sm:px-8",
+    },
+  },
+});
+
+interface Props extends VariantProps<typeof containerVariants> {
+  className?: string;
+}
+
+const { inset, className } = Astro.props;
+---
+
+<div class={containerVariants({ inset, class: className })}><slot /></div>

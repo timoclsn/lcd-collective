@@ -1,0 +1,67 @@
+---
+import Principle from "../components/Principle.astro";
+import Container from "../design-system/Container.astro";
+import Heading from "../design-system/Heading.astro";
+import Text from "../design-system/Text.astro";
+
+const principles = [
+  {
+    title: "1. Purpose over profit",
+    text: "We choose purpose as a driver for our decision-making, over profit, which is viewed as a means to a higher goal that serves the many.",
+  },
+  {
+    title: "2. Inspired by nature",
+    text: "We apply Biomimicry and therefore take inspiration from natural systems and nature as a whole.",
+  },
+  {
+    title: "3. Interconnected",
+    text: "We apply systems thinking and aim to uphold the balance of the ecosystem.",
+  },
+  {
+    title: "4. Lifecycle aware",
+    text: "We chose an holistic approach and regard the whole lifecycle of a solution.",
+  },
+  {
+    title: "5. Long term thinking & doing",
+    text: "We apply long-term thinking in our doing and aim for sustainable and regenerative solutions.",
+  },
+  {
+    title: "6. Sufficiency",
+    text: "We focus on what is important and leave out unnecessary complexity if it does not add value.",
+  },
+  {
+    title: "7. Equal and thriving",
+    text: "We aim for services, systems and products that are socially just and ethical throughout their whole lifecycle.",
+  },
+  {
+    title: "8. De-centring and reimagining",
+    text: "We question the status quo and current solutuons with the goal to change the world for the better for all life.",
+  },
+  {
+    title: "9. Acknowledging of all lifeforms",
+    text: "We consider all peoples, species and environments while designing products, systems and services.",
+  },
+] as const;
+---
+
+<section id="principles" class="bg-collective-principles">
+  <Container inset className="pt-20 pb-32">
+    <Heading level="2" className="text-collective-text mb-4">
+      Our Life-centered Design Principles
+    </Heading>
+    <Text as="p" size="large" className="text-collective-text-light mb-20">
+      9 principles to guide life-centered thinking and doing
+    </Text>
+    <ol
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12"
+    >
+      {
+        principles.map((principle) => (
+          <li>
+            <Principle title={principle.title} description={principle.text} />
+          </li>
+        ))
+      }
+    </ol>
+  </Container>
+</section>

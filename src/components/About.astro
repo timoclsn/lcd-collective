@@ -1,0 +1,52 @@
+---
+import { Image } from "@astrojs/image/components";
+import Container from "../design-system/Container.astro";
+import Heading from "../design-system/Heading.astro";
+import Text from "../design-system/Text.astro";
+---
+
+<section id="about" class="relative bg-collective-about">
+  {/* Background */}
+  <div class="hidden md:flex absolute inset-0">
+    <Image
+      src="/images/cave.png"
+      alt="View from inside a dessert canyon into the sky."
+      format="avif"
+      width={1386}
+      height={920}
+      class="w-1/2 object-cover object-right max-h-[904px]"
+    />
+    <div class="w-1/2"></div>
+  </div>
+
+  {/* Foreground */}
+  <div class="relative">
+    <Container className="flex">
+      <div class="hidden md:block w-1/2"></div>
+      <Container inset className="w-full md:w-1/2 pt-20 pb-32">
+        <Heading className="text-collective-white mb-4">
+          About the Collective
+        </Heading>
+        <Text as="p" size="large" className="text-collective-white-light mb-14">
+          Why we exist and our purpose
+        </Text>
+        <Text as="p" className="text-collective-white-light">
+          The Life Centered Design Collective is a small group of designers and
+          educators with varying backgrounds. Our goal is to bring together
+          people, skills and knowledge that advance the practice and advocate
+          for the philosophy of life-centered design.
+          <br />
+          <br />
+          We imagine a world where all life and long-term effects are top of mind
+          while creating products, services and systems.
+          <br />
+          <br />
+          If you have questions or just want to get in touch, feel free to contact
+          anyone of our{" "}
+          <a href="/#team" class="underline"> members</a>
+          .
+        </Text>
+      </Container>
+    </Container>
+  </div>
+</section>
