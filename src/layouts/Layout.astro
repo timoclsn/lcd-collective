@@ -32,11 +32,6 @@ const pagePreviewImage = previewImage ? previewImage : "og-image.png";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
-  <body>
     <SEO
       title={pageTitle}
       description={pageDescription}
@@ -44,6 +39,8 @@ const pagePreviewImage = previewImage ? previewImage : "og-image.png";
       previewImage={pagePreviewImage}
     />
     <Favicons />
+  </head>
+  <body>
     <Navigation />
     <main class="flex-1">
       <slot />
