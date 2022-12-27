@@ -18,7 +18,7 @@ const validElements = [
 ] as const;
 type ValidElements = typeof validElements[number];
 
-const textVariants = cva("font-sans", {
+const textVariants = cva("font-sans antialiased", {
   variants: {
     size: {
       medium: "text-base",
