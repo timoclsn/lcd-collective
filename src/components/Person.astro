@@ -6,21 +6,20 @@ import Text from "../design-system/Text.astro";
 
 interface Props {
   name: string;
-  description: string;
-  links: Array<{
+  links?: Array<{
     name: string;
     icon: string;
     url: string;
   }>;
 }
 
-const { name, description, links } = Astro.props;
+const { name, links } = Astro.props;
 
 const imageName = `${name.split(" ").join("-").toLocaleLowerCase()}.png`;
 ---
 
 <Image
-  src={`/images/team/${imageName}`}
+  src={`/images/people/${imageName}`}
   alt={`Portrait of ${name}`}
   format="avif"
   width={336}
@@ -30,10 +29,12 @@ const imageName = `${name.split(" ").join("-").toLocaleLowerCase()}.png`;
 <Heading as="h3" level="4" className="text-text mb-2">
   {name}
 </Heading>
-<Text as="p" className="text-text-light" set:html={description} />
+<div class="text-text-light prose">
+  <slot />
+</div>
 {
-  links.length > 0 && (
-    <ul class="flex gap-4 [&_svg]:w-[20px] [&_svg]:h-[20px] mt-6">
+  links && (
+    <ul class="flex gap-4 [&_svg]:w-[20px] [&_svg]:h-[20px] mt-6 items-center">
       {links.map((link) => (
         <li>
           <a

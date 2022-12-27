@@ -42,7 +42,16 @@ declare module 'astro:content' {
 	};
 
 	const entryMap: {
-		"pages": {
+		"friends": {
+"1-madeleine-van-venetie.md": {
+  id: "1-madeleine-van-venetie.md",
+  slug: "1-madeleine-van-venetie",
+  body: string,
+  collection: "friends",
+  data: InferEntrySchema<"friends">
+},
+},
+"pages": {
 "imprint.md": {
   id: "imprint.md",
   slug: "imprint",
@@ -56,6 +65,108 @@ declare module 'astro:content' {
   body: string,
   collection: "pages",
   data: InferEntrySchema<"pages">
+},
+},
+"principles": {
+"1-purpose-over-profit.md": {
+  id: "1-purpose-over-profit.md",
+  slug: "1-purpose-over-profit",
+  body: string,
+  collection: "principles",
+  data: InferEntrySchema<"principles">
+},
+"2-inspired-by-nature.md": {
+  id: "2-inspired-by-nature.md",
+  slug: "2-inspired-by-nature",
+  body: string,
+  collection: "principles",
+  data: InferEntrySchema<"principles">
+},
+"3-interconnected.md": {
+  id: "3-interconnected.md",
+  slug: "3-interconnected",
+  body: string,
+  collection: "principles",
+  data: InferEntrySchema<"principles">
+},
+"4-lifecycle-aware.md": {
+  id: "4-lifecycle-aware.md",
+  slug: "4-lifecycle-aware",
+  body: string,
+  collection: "principles",
+  data: InferEntrySchema<"principles">
+},
+"5-long-term-thinking-and-doing.md": {
+  id: "5-long-term-thinking-and-doing.md",
+  slug: "5-long-term-thinking-and-doing",
+  body: string,
+  collection: "principles",
+  data: InferEntrySchema<"principles">
+},
+"6-sufficiency.md": {
+  id: "6-sufficiency.md",
+  slug: "6-sufficiency",
+  body: string,
+  collection: "principles",
+  data: InferEntrySchema<"principles">
+},
+"7-equal-and-thriving.md": {
+  id: "7-equal-and-thriving.md",
+  slug: "7-equal-and-thriving",
+  body: string,
+  collection: "principles",
+  data: InferEntrySchema<"principles">
+},
+"8-de-centring-and-reimagining.md": {
+  id: "8-de-centring-and-reimagining.md",
+  slug: "8-de-centring-and-reimagining",
+  body: string,
+  collection: "principles",
+  data: InferEntrySchema<"principles">
+},
+},
+"team": {
+"1-katharina-clasen.md": {
+  id: "1-katharina-clasen.md",
+  slug: "1-katharina-clasen",
+  body: string,
+  collection: "team",
+  data: InferEntrySchema<"team">
+},
+"2-estela-duhart-benavides.md": {
+  id: "2-estela-duhart-benavides.md",
+  slug: "2-estela-duhart-benavides",
+  body: string,
+  collection: "team",
+  data: InferEntrySchema<"team">
+},
+"3-damien-lutz.md": {
+  id: "3-damien-lutz.md",
+  slug: "3-damien-lutz",
+  body: string,
+  collection: "team",
+  data: InferEntrySchema<"team">
+},
+"4-jeroen-spoelstra.md": {
+  id: "4-jeroen-spoelstra.md",
+  slug: "4-jeroen-spoelstra",
+  body: string,
+  collection: "team",
+  data: InferEntrySchema<"team">
+},
+"5-dr.-martin-tomitsch.md": {
+  id: "5-dr.-martin-tomitsch.md",
+  slug: "5-dr.-martin-tomitsch",
+  body: string,
+  collection: "team",
+  data: InferEntrySchema<"team">
+},
+"6-monika-sznel.md": {
+  id: "6-monika-sznel.md",
+  slug: "6-monika-sznel",
+  body: string,
+  collection: "team",
+  data: InferEntrySchema<"team">
 },
 },
 

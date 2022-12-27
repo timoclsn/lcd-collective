@@ -1,62 +1,11 @@
 ---
+import { getCollection } from "astro:content";
 import Container from "../design-system/Container.astro";
 import Heading from "../design-system/Heading.astro";
 import Text from "../design-system/Text.astro";
 import Person from "./Person.astro";
 
-const members = [
-  {
-    name: "Katharina Clasen",
-    text: "Katharina is a freelance UX Designer, lecturer at Stuttgart Media University, and founder of the resource hub LifeCenteredDesign.Net. (Designed this Website) <br /><br />  Follow <a href='https://katharinaclasen.de' target='_blank' rel='noopener noreferrer' class='underline'>Katharina</a> on <a href='https://www.linkedin.com/in/katharina-clasen/' target='_blank' rel='noopener noreferrer' class='underline'>LinkedIn</a> or <a href='https://www.instagram.com/katharinaclasen/' target='_blank' rel='noopener noreferrer' class='underline'>Instagram</a> to stay up to date on the connection of User Experience and Life-centered Design. Visit <a href='https://lifecentereddesign.net' target='_blank' rel='noopener noreferrer' class='underline'>LifeCenteredDesign.Net</a> to find a collection of Resources to get into Life-centered Design.",
-    links: [
-      {
-        name: "Personal Website",
-        icon: "lucide:link-2",
-        url: "https://katharinaclasen.de",
-      },
-      {
-        name: "Life-centered Design Resources",
-        icon: "lucide:clipboard-list",
-        url: "https://lifecentereddesign.net",
-      },
-      {
-        name: "LinkedIn",
-        icon: "lucide:linkedin",
-        url: "https://www.linkedin.com/in/katharina-clasen/",
-      },
-      {
-        name: "Instagram",
-        icon: "lucide:instagram",
-        url: "https://www.instagram.com/katharinaclasen/",
-      },
-    ],
-  },
-  {
-    name: "Estela Duhart Benavides",
-    text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
-    links: [],
-  },
-  {
-    name: "Damien Lutz",
-    text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
-    links: [],
-  },
-  {
-    name: "Jeroen Spoelstra",
-    text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
-    links: [],
-  },
-  {
-    name: "Dr. Martin Tomitsch",
-    text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
-    links: [],
-  },
-  {
-    name: "Monika Sznel",
-    text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
-    links: [],
-  },
-];
+const members = await getCollection("team");
 ---
 
 <section id="team" class="bg-team">
@@ -68,19 +17,18 @@ const members = [
       The founders of the Life Centered Design Collective, who are driving
       things forward:
     </Text>
-    <ul
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-20"
-    >
+    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 lg:gap-36">
       {
-        members.map((member) => (
-          <li>
-            <Person
-              name={member.name}
-              description={member.text}
-              links={member.links}
-            />
-          </li>
-        ))
+        members.map(async (member) => {
+          const { Content } = await member.render();
+          return (
+            <li>
+              <Person name={member.data.name} links={member.data.links}>
+                <Content />
+              </Person>
+            </li>
+          );
+        })
       }
     </ul>
   </Container>

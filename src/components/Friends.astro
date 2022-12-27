@@ -1,16 +1,11 @@
 ---
+import { getCollection } from "astro:content";
 import Container from "../design-system/Container.astro";
 import Heading from "../design-system/Heading.astro";
 import Text from "../design-system/Text.astro";
 import Person from "./Person.astro";
 
-const friends = [
-  {
-    name: "Madeleine van Venetie",
-    text: "Senior User Experience Designer",
-    links: [],
-  },
-];
+const friends = await getCollection("friends");
 ---
 
 <section id="team" class="bg-grey">
@@ -26,15 +21,16 @@ const friends = [
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-20"
     >
       {
-        friends.map((freind) => (
-          <li>
-            <Person
-              name={freind.name}
-              description={freind.text}
-              links={freind.links}
-            />
-          </li>
-        ))
+        friends.map(async (friend) => {
+          const { Content } = await friend.render();
+          return (
+            <li>
+              <Person name={friend.data.name}>
+                <Content />
+              </Person>
+            </li>
+          );
+        })
       }
     </ul>
   </Container>
