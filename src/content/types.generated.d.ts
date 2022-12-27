@@ -124,6 +124,13 @@ declare module 'astro:content' {
   collection: "principles",
   data: InferEntrySchema<"principles">
 },
+"9-acknowledging-of-all-lifeforms.md": {
+  id: "9-acknowledging-of-all-lifeforms.md",
+  slug: "9-acknowledging-of-all-lifeforms",
+  body: string,
+  collection: "principles",
+  data: InferEntrySchema<"principles">
+},
 },
 "team": {
 "1-katharina-clasen.md": {
