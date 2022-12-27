@@ -1,5 +1,4 @@
 ---
-layout: ../layouts/TextPage.astro
 title: "Privacy"
 ---
 

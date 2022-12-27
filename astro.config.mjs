@@ -5,6 +5,9 @@ import { defineConfig } from "astro/config";
 
 export default defineConfig({
   site: "https://lifecentereddesign.co",
+  experimental: {
+    contentCollections: true,
+  },
   integrations: [
     tailwind(),
     image({

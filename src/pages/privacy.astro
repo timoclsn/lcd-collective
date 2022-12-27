@@ -1,0 +1,22 @@
+---
+import { getEntry } from "astro:content";
+import Container from "../design-system/Container.astro";
+import Heading from "../design-system/Heading.astro";
+import Layout from "../layouts/Layout.astro";
+
+const page = await getEntry("pages", "privacy.md");
+const { Content } = await page.render();
+---
+
+<Layout title={page.data.title} slug={page.slug}>
+  <Container inset>
+    <section class="space-y-20 max-w-prose mx-auto">
+      <Heading level="1" className="mb-6">
+        {page.data.title}
+      </Heading>
+      <div class="prose">
+        <Content />
+      </div>
+    </section>
+  </Container>
+</Layout>

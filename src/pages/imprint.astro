@@ -1,19 +1,21 @@
 ---
+import { getEntry } from "astro:content";
 import Container from "../design-system/Container.astro";
 import Heading from "../design-system/Heading.astro";
-import Layout from "./Layout.astro";
+import Layout from "../layouts/Layout.astro";
 
-const { frontmatter } = Astro.props;
+const page = await getEntry("pages", "imprint.md");
+const { Content } = await page.render();
 ---
 
-<Layout title="Imprint" slug="imprint">
+<Layout title={page.data.title} slug={page.slug}>
   <Container inset>
     <section class="space-y-20 max-w-prose mx-auto">
       <Heading level="1" className="mb-6">
-        {frontmatter.title}
+        {page.data.title}
       </Heading>
       <div class="prose">
-        <slot />
+        <Content />
       </div>
     </section>
   </Container>
