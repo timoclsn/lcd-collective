@@ -1,7 +1,7 @@
 ---
 import { Image } from "@astrojs/image/components";
 import { Icon } from "astro-icon";
-import Heading from "../design-system/Heading.astro";
+import Text from "../design-system/Text.astro";
 
 interface Props {
   name: string;
@@ -25,9 +25,9 @@ const imageName = `${name.split(" ").join("-").toLocaleLowerCase()}.png`;
   height={336}
   class="mb-4 w-full"
 />
-<Heading as="h3" level="4" className="text-text mb-2">
+<Text as="h3" weight="bold" uppercase className="text-text mb-2">
   {name}
-</Heading>
+</Text>
 <div class="text-text-light prose">
   <slot />
 </div>

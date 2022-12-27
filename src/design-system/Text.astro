@@ -28,6 +28,9 @@ const textVariants = cva("font-sans antialiased", {
       normal: "font-normal",
       bold: "font-bold",
     },
+    uppercase: {
+      true: "uppercase",
+    },
   },
 });
 
@@ -40,10 +43,11 @@ const {
   as: Element = "span",
   size = "medium",
   weight = "normal",
+  uppercase,
   className,
 } = Astro.props;
 ---
 
-<Element class={textVariants({ size, weight, class: className })}>
+<Element class={textVariants({ size, weight, uppercase, class: className })}>
   <slot />
 </Element>
