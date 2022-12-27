@@ -2,4 +2,4 @@
 name: Madeleine van Venetie
 ---
 
-Madeleine van Venetie
+Senior User Experience Designer
