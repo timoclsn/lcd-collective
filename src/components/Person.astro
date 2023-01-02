@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Picture } from "@astrojs/image/components";
 import { Icon } from "astro-icon";
 import Text from "../design-system/Text.astro";
 
@@ -17,12 +17,13 @@ const { name, links } = Astro.props;
 const imageName = `${name.split(" ").join("-").toLocaleLowerCase()}.png`;
 ---
 
-<Image
+<Picture
   src={`/images/people/${imageName}`}
   alt={`Portrait of ${name}`}
-  format="webp"
-  width={336}
-  height={336}
+  sizes="100vw, (min-width: 640px) 50vw, (min-width: 768px) 33vw"
+  widths={[337, 200, 100]}
+  aspectRatio="1:1"
+  formats={["avif", "webp", "png"]}
   class="mb-4 w-full"
 />
 <Text as="h3" weight="bold" uppercase className="text-text mb-2">
