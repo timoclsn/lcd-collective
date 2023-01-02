@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Picture } from "@astrojs/image/components";
 import Container from "../design-system/Container.astro";
 import Heading from "../design-system/Heading.astro";
 import Text from "../design-system/Text.astro";
@@ -8,14 +8,16 @@ import Text from "../design-system/Text.astro";
 <section id="about" class="relative bg-about">
   {/* Background */}
   <div class="hidden md:flex absolute inset-0">
-    <Image
-      src="/images/cave.png"
-      alt="View from inside a dessert canyon into the sky."
-      format="webp"
-      width={1386}
-      height={920}
-      class="w-1/2 object-cover object-right max-h-[904px]"
-    />
+    <div class="w-1/2 max-h-[904px]">
+      <Picture
+        alt="View from inside a dessert canyon into the sky."
+        src="/images/cave.png"
+        sizes="50vw"
+        widths={[1000, 1200, 1400, 1600, 1800, 2000]}
+        aspectRatio={1386 / 920}
+        class="object-cover object-right w-full h-full"
+      />
+    </div>
     <div class="w-1/2"></div>
   </div>
 

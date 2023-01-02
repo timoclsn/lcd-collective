@@ -1,21 +1,20 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Picture } from "@astrojs/image/components";
 import Container from "../design-system/Container.astro";
-import Heading from "../design-system/Heading.astro";
 import Text from "../design-system/Text.astro";
 ---
 
 <section id="resources" class="relative">
   <div class="relative">
     <Container className="block md:flex">
-      <Container inset className="md:w-1/2 lg:w-2/3 ">
-        <Image
+      <Container inset className="md:w-1/2 lg:w-2/3 py-20">
+        <Picture
           src="/images/coming-soon.png"
           alt="Coming soon illustration"
-          format="webp"
-          width={736}
-          height={548}
-          class="object-contain py-20 max-h-[548px]"
+          sizes="75vw, (min-width: 768px) 50vw"
+          widths={[600, 800, 1000, 1200, 1400]}
+          aspectRatio={736 / 548}
+          class="block w-3/4 mx-auto"
         />
       </Container>
       <Container
