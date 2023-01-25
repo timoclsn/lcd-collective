@@ -1,5 +1,0 @@
----
-name: Monika Sznel
----
-
-TBD

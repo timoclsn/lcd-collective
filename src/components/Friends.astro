@@ -25,7 +25,7 @@ const friends = await getCollection("friends");
           const { Content } = await friend.render();
           return (
             <li>
-              <Person name={friend.data.name}>
+              <Person name={friend.data.name} links={friend.data.links}>
                 <Content />
               </Person>
             </li>

@@ -30,6 +30,15 @@ const team = defineCollection({
 const friends = defineCollection({
   schema: z.object({
     name: z.string(),
+    links: z
+      .array(
+        z.object({
+          name: z.string(),
+          icon: z.string(),
+          url: z.string().url(),
+        })
+      )
+      .optional(),
   }),
 });
 
