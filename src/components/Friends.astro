@@ -4,6 +4,7 @@ import Container from "../design-system/Container.astro";
 import Heading from "../design-system/Heading.astro";
 import Text from "../design-system/Text.astro";
 import Person from "./Person.astro";
+import PersonGrid from "./PersonGrid.astro";
 
 const friends = await getCollection("friends");
 ---
@@ -17,7 +18,7 @@ const friends = await getCollection("friends");
       The people supporting the Life Centered Design Collective whenever
       possible:
     </Text>
-    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 lg:gap-36">
+    <PersonGrid>
       {
         friends.map(async (friend) => {
           const { Content } = await friend.render();
@@ -30,6 +31,6 @@ const friends = await getCollection("friends");
           );
         })
       }
-    </ul>
+    </PersonGrid>
   </Container>
 </section>

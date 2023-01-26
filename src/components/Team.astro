@@ -4,6 +4,7 @@ import Container from "../design-system/Container.astro";
 import Heading from "../design-system/Heading.astro";
 import Text from "../design-system/Text.astro";
 import Person from "./Person.astro";
+import PersonGrid from "./PersonGrid.astro";
 
 const members = await getCollection("team");
 ---
@@ -17,7 +18,7 @@ const members = await getCollection("team");
       The founders of the Life Centered Design Collective, who are driving
       things forward:
     </Text>
-    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 lg:gap-36">
+    <PersonGrid>
       {
         members.map(async (member) => {
           const { Content } = await member.render();
@@ -30,6 +31,6 @@ const members = await getCollection("team");
           );
         })
       }
-    </ul>
+    </PersonGrid>
   </Container>
 </section>
