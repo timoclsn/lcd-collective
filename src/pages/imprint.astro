@@ -4,10 +4,7 @@ import Container from "../design-system/Container.astro";
 import Heading from "../design-system/Heading.astro";
 import Layout from "../layouts/Layout.astro";
 
-const pages = await getCollection(
-  "pages",
-  (page) => page.data.title === "Imprint"
-);
+const pages = await getCollection("pages", (page) => page.id === "imprint.md");
 const page = pages[0];
 const { Content } = await page.render();
 ---
