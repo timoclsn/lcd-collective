@@ -17,9 +17,7 @@ const friends = await getCollection("friends");
       The people supporting the Life Centered Design Collective whenever
       possible:
     </Text>
-    <ul
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-20"
-    >
+    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 lg:gap-36">
       {
         friends.map(async (friend) => {
           const { Content } = await friend.render();
