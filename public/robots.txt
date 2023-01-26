@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://lifecentereddesign.com/sitemap-index.xml
+Sitemap: https://lifecentereddesign.co/sitemap-index.xml
