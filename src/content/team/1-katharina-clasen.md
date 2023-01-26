@@ -15,6 +15,6 @@ links:
     url: https://www.instagram.com/katharinaclasen/
 ---
 
-Katharina is a freelance UX Designer, lecturer at Stuttgart Media University, and founder of the resource hub LifeCenteredDesign.Net. (Designed this Website)
+[Katharina](https://katharinaclasen.com/) is a freelance UX Designer, lecturer at Stuttgart Media University and co-founder of the resource hub LifeCenteredDesign.Net together with her husband [Timo](https://timoclasen.de/). She is exploring and promoting Life-centered Design principles and tools, helping designers adapt the thinking.
 
 Follow [Katharina](https://katharinaclasen.de) on [LinkedIn](https://www.linkedin.com/in/katharina-clasen/) or [Instagram](https://www.instagram.com/katharinaclasen/) to stay up to date on the connection of User Experience and Life-centered Design. Visit [LifeCenteredDesign.Net](https://lifecentereddesign.net) to find a collection of Resources to get into Life-centered Design.

@@ -14,4 +14,4 @@ links:
 
 Frontend Engineer [@Steuerbot](https://www.steuerbot.com/) with a passion for fast and sustainable web experiences.
 
-Building [LifeCenteredDesign.Net](https://lifecentereddesign.net) together with [Katharina](https://katharinaclasen.com/).
+Building [LifeCenteredDesign.Net](https://lifecentereddesign.net) together with his wife [Katharina](https://katharinaclasen.com/).

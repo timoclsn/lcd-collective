@@ -18,4 +18,4 @@ links:
     url: https://www.instagram.com/future.scouting/
 ---
 
-As founder of futurescouting.com.au, and author of Future Scouting and The Life-centred Design Guide, Damien Lutz empowers designers to design with their values.
+As founder of [futurescouting.com.au](https://futurescouting.com.au/), and author of Future Scouting and The Life-centred Design Guide, Damien Lutz empowers designers to design with their values.
