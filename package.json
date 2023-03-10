@@ -12,12 +12,12 @@
     "typecheck": "astro check && tsc --noEmit"
   },
   "dependencies": {
-    "@astrojs/image": "^0.15.1",
-    "@astrojs/sitemap": "^1.1.0",
-    "@astrojs/tailwind": "^3.0.1",
+    "@astrojs/image": "^0.16.0",
+    "@astrojs/sitemap": "^1.2.0",
+    "@astrojs/tailwind": "^3.1.0",
     "@fontsource/dm-sans": "^4.5.9",
     "@fontsource/source-serif-4": "^4.5.17",
-    "astro": "^2.0.16",
+    "astro": "^2.1.2",
     "astro-icon": "^0.8.0",
     "class-variance-authority": "^0.4.0",
     "sharp": "^0.31.3",
@@ -26,7 +26,7 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
     "prettier-plugin-astro": "^0.8.0",
-    "prettier-plugin-tailwindcss": "^0.2.3",
+    "prettier-plugin-tailwindcss": "^0.2.4",
     "typescript": "^4.9.5"
   }
 }
