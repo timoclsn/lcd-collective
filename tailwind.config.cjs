@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["'DM Sans'", ...fontFamily.sans],
-      serif: ["'Source Serif 4Variable'", "Inter", ...fontFamily.serif],
+      serif: ["'Source Serif 4 Variable'", "Inter", ...fontFamily.serif],
     },
     colors: {
       transparent: "var(--color-transparent)",

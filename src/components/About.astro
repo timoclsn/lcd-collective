@@ -1,5 +1,6 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { Image } from "astro:assets";
+import caveImg from "../assets/cave.png";
 import Container from "../design-system/Container.astro";
 import Heading from "../design-system/Heading.astro";
 import Text from "../design-system/Text.astro";
@@ -9,15 +10,9 @@ import Text from "../design-system/Text.astro";
   {/* Background */}
   <div class="hidden md:flex absolute inset-0">
     <div class="w-1/2 max-h-[904px]">
-      <Picture
+      <Image
+        src={caveImg}
         alt="View from inside a dessert canyon into the sky."
-        src="/images/cave.png"
-        sizes="50vw"
-        widths={[1000, 1200, 1400, 1600, 1800, 2000]}
-        aspectRatio={1386 / 920}
-        width={1386}
-        height={920}
-        background="#0C0F19"
         class="object-cover object-right w-full h-full"
       />
     </div>
@@ -40,14 +35,14 @@ import Text from "../design-system/Text.astro";
           for the philosophy of life-centered design.
           <br />
           <br />
-          We imagine a world where all life and long-term effects are top of mind
-          while creating products, services and systems.
+           We imagine a world where all life and long-term effects are top of
+          mind while creating products, services and systems.
           <br />
           <br />
-          If you have questions or just want to get in touch, feel free to contact
-          anyone of our{" "}
+           If you have questions or just want to get in touch, feel free to
+          contact anyone of our{" "}
           <a href="/#team" class="underline"> members</a>
-          .
+           .
         </Text>
       </Container>
     </Container>

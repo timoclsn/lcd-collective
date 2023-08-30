@@ -1,5 +1,6 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { Image } from "astro:assets";
+import comingSoonImg from "../assets/coming-soon.png";
 import Container from "../design-system/Container.astro";
 import Text from "../design-system/Text.astro";
 ---
@@ -8,16 +9,10 @@ import Text from "../design-system/Text.astro";
   <div class="relative">
     <Container className="block md:flex">
       <Container inset className="md:w-1/2 lg:w-2/3 py-20">
-        <Picture
-          src="/images/coming-soon.png"
+        <Image
+          src={comingSoonImg}
           alt="Coming soon illustration"
-          sizes="75vw, (min-width: 768px) 50vw"
-          widths={[600, 800, 1000, 1200, 1400]}
-          aspectRatio={736 / 548}
-          width={736}
-          height={548}
           class="block w-3/4 mx-auto"
-          background="#FFFFFF"
         />
       </Container>
       <Container

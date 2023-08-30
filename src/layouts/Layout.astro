@@ -3,7 +3,7 @@ import "@fontsource/dm-sans/400-italic.css";
 import "@fontsource/dm-sans/400.css";
 import "@fontsource/dm-sans/700-italic.css";
 import "@fontsource/dm-sans/700.css";
-import "@fontsource/source-serif-4/variable.css";
+import "@fontsource-variable/source-serif-4";
 import Favicons from "../components/Favicons.astro";
 import Footer from "../components/Footer.astro";
 import Navigation from "../components/Navigation.astro";
@@ -27,7 +27,7 @@ const newSlug = slug ? `/${slug}` : "";
 const pagePreviewImage = previewImage ? previewImage : "og-image.png";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -44,8 +44,7 @@ const pagePreviewImage = previewImage ? previewImage : "og-image.png";
       data-respect-dnt
       async
       data-api="/_hive"
-      src="/bee.js"
-    ></script>
+      src="/bee.js"></script>
   </head>
   <body>
     <Navigation />
