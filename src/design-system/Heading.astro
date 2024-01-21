@@ -1,10 +1,11 @@
 ---
-import { cva, type VariantProps } from "class-variance-authority";
+import { cva, type VariantProps } from "cva";
 
 const validElements = ["h1", "h2", "h3", "h4", "span"] as const;
-type ValidElements = typeof validElements[number];
+type ValidElements = (typeof validElements)[number];
 
-const headingVariants = cva("font-serif font-bold antialiased", {
+const headingVariants = cva({
+  base: "font-serif font-bold antialiased",
   variants: {
     level: {
       "1": "text-5xl sm:text-7xl",
