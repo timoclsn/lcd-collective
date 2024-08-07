@@ -18,4 +18,6 @@ links:
     url: https://www.instagram.com/future.scouting/
 ---
 
-As founder of [futurescouting.com.au](https://futurescouting.com.au/), and author of Future Scouting and The Life-centred Design Guide, Damien Lutz empowers designers to design with their values.
+Damien Lutz is the Founder of the [Life-centred Design Lab](https://lifecentred.design/) and author of [The Life-centred Design Guide](https://lifecentred.design/the-life-centred-design-guide/), [The Non-human Persona Guide](https://lifecentred.design/non-human-personas/the-non-human-persona-guide/), and [Future Scouting](https://futurescouting.com.au/).
+
+Follow Damien on [LinkedIn](https://www.linkedin.com/in/damien-lutz-36230515) and explore [lifecentred.design](https://lifecentred.design/) for courses, books, tools, projects, and inspiration to design more sustainable and inclusive futures.
