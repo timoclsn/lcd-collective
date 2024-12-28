@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro";
 
 const page = await getEntry("pages", "imprint");
 if (!page) {
-  return null;
+  throw new Error("Page not found");
 }
 const { Content } = await render(page);
 ---
