@@ -1,15 +1,17 @@
 ---
-import { getCollection } from "astro:content";
+import { getEntry, render } from "astro:content";
 import Container from "../design-system/Container.astro";
 import Heading from "../design-system/Heading.astro";
 import Layout from "../layouts/Layout.astro";
 
-const pages = await getCollection("pages", (page) => page.id === "imprint.md");
-const page = pages[0];
-const { Content } = await page.render();
+const page = await getEntry("pages", "imprint");
+if (!page) {
+  return null;
+}
+const { Content } = await render(page);
 ---
 
-<Layout title={page.data.title} slug={page.slug}>
+<Layout title={page.data.title} slug={page.id}>
   <Container inset>
     <section class="space-y-20 max-w-prose mx-auto">
       <Heading level="1" className="mb-6">

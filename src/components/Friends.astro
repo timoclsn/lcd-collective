@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import Container from "../design-system/Container.astro";
 import Heading from "../design-system/Heading.astro";
 import Text from "../design-system/Text.astro";
@@ -21,7 +21,7 @@ const friends = await getCollection("friends");
     <PersonGrid>
       {
         friends.map(async (friend) => {
-          const { Content } = await friend.render();
+          const { Content } = await render(friend);
           return (
             <li>
               <Person name={friend.data.name} links={friend.data.links}>

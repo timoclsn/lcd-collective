@@ -24,7 +24,7 @@ const principles = await getCollection("principles");
           <li>
             <Principle
               title={principle.data.title}
-              description={principle.body}
+              description={principle.body || ""}
             />
           </li>
         ))
