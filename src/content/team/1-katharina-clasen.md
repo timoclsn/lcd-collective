@@ -1,5 +1,13 @@
 ---
 name: Katharina Clasen
+location: Stuttgart, Germany
+services:
+  - UX Design & UI Design
+  - Life-centered Design consultancy
+  - Speaking (occasionally)
+cta:
+  text: Find me here
+  url: https://katharinaclasen.de
 links:
   - name: Personal Website
     icon: lucide:link-2
@@ -15,6 +23,4 @@ links:
     url: https://www.instagram.com/katharinaclasen/
 ---
 
-[Katharina](https://katharinaclasen.com/) is a freelance UX Designer, lecturer at Stuttgart Media University and co-founder of the resource hub LifeCenteredDesign.Net together with her husband [Timo](https://timoclasen.de/). She is exploring and promoting Life-centered Design principles and tools, helping designers adapt the thinking.
-
-Follow [Katharina](https://katharinaclasen.de) on [LinkedIn](https://www.linkedin.com/in/katharina-clasen/) or [Instagram](https://www.instagram.com/katharinaclasen/) to stay up to date on the connection of User Experience and Life-centered Design. Visit [LifeCenteredDesign.Net](https://lifecentereddesign.net) to find a collection of Resources to get into Life-centered Design.
+Katharina has been working as a freelancer and lecturer in the UX industry for more than 10 years. Her focus is on providing holistic support to early-stage startups as well as extensive guidance in research, conception, and design for digitalization projects of established companies.

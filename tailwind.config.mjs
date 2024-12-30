@@ -1,7 +1,7 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     fontFamily: {
@@ -18,8 +18,8 @@ module.exports = {
       grey: "#E7E8F2",
       principles: "#FFFAF2",
       about: "#0C0F19",
-      team: "#E9EFE8",
-      "team-links": "#3D8269",
+      team: "#E7E8F2",
+      "team-links": "#4543BE",
       button: "#4543BE",
     },
   },

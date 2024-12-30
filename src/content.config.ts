@@ -19,15 +19,19 @@ const team = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/team" }),
   schema: z.object({
     name: z.string(),
-    links: z
-      .array(
-        z.object({
-          name: z.string(),
-          icon: z.string(),
-          url: z.string().url(),
-        }),
-      )
-      .optional(),
+    location: z.string(),
+    services: z.array(z.string()),
+    links: z.array(
+      z.object({
+        name: z.string(),
+        icon: z.string(),
+        url: z.string().url(),
+      }),
+    ),
+    cta: z.object({
+      text: z.string(),
+      url: z.string().url(),
+    }),
   }),
 });
 

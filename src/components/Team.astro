@@ -24,7 +24,13 @@ const members = await getCollection("team");
           const { Content } = await render(member);
           return (
             <li>
-              <Person name={member.data.name} links={member.data.links}>
+              <Person
+                name={member.data.name}
+                location={member.data.location}
+                services={member.data.services}
+                cta={member.data.cta}
+                links={member.data.links}
+              >
                 <Content />
               </Person>
             </li>
