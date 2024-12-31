@@ -21,6 +21,7 @@ export default {
       team: "#E7E8F2",
       "team-links": "#4543BE",
       button: "#4543BE",
+      "case-study": "#E9EFE8",
     },
   },
   plugins: [require("@tailwindcss/typography")],
