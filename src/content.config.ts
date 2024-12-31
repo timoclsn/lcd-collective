@@ -36,7 +36,7 @@ const team = defineCollection({
 });
 
 const friends = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/team" }),
+  loader: glob({ pattern: "**/*.md", base: "./src/content/friends" }),
   schema: z.object({
     name: z.string(),
     links: z
