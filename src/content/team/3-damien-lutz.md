@@ -1,5 +1,13 @@
 ---
 name: Damien Lutz
+location: Stuttgart, Germany
+services:
+  - UX Design & UI Design
+  - Life-centered Design consultancy
+  - Speaking (occasionally)
+cta:
+  text: Find me here
+  url: https://katharinaclasen.de
 links:
   - name: Future Scouting Website
     icon: lucide:link-2
