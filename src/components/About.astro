@@ -4,26 +4,27 @@ import caveImg from "../assets/cave.png";
 import Container from "../design-system/Container.astro";
 import Heading from "../design-system/Heading.astro";
 import Text from "../design-system/Text.astro";
+import Button from "../design-system/Button.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <section id="about" class="bg-about">
   <div class="relative">
     {/* Background */}
     <div class="hidden md:flex absolute inset-0">
+      <div class="w-1/2"></div>
       <div class="w-1/2 max-h-[904px]">
         <Image
           src={caveImg}
           alt="View from inside a dessert canyon into the sky."
-          class="object-cover object-right w-full h-full"
+          class="object-cover object-left w-full h-full"
         />
       </div>
-      <div class="w-1/2"></div>
     </div>
 
     {/* Foreground */}
     <div class="relative">
       <Container className="flex">
-        <div class="hidden md:block w-1/2"></div>
         <Container inset className="w-full md:w-1/2 pt-20 pb-32">
           <Heading className="text-white mb-4">About the Collective</Heading>
           <Text as="p" size="large" className="text-white-light mb-14">
@@ -46,61 +47,69 @@ import Text from "../design-system/Text.astro";
             .
           </Text>
         </Container>
+        <div class="hidden md:block w-1/2"></div>
       </Container>
     </div>
   </div>
-  <Container className="flex gap-4 py-20" inset>
-    <div class="flex-1">
-      <Heading level="2" className="text-white-light mb-4">Our Approach</Heading
-      >
-      <Text as="p" className="text-white-light">
-        Our collective operates on two levels:
-        <br />
-        <br />
-        <ul class="list-disc text-white-light">
-          <li>
-            <Text as="span" className="text-white-light"
-              >Individual Exploration: Each member engages in personal
-              exploration, continually expanding our knowledge and expertise. We
-              come together regularly to share experiences and insights,
-              fostering a rich environment of collaborative learning.</Text
-            >
-          </li>
-          <li>
-            <Text as="span" className="text-white-light"
-              >Collaborative Projects: We undertake group projects that
-              exemplify the principles of Life-centered Design. These projects
-              serve as both practical applications and educational tools,
-              allowing us to disseminate our findings and inspire others in the
-              design community.</Text
-            >
-          </li>
-        </ul>
-      </Text>
+  <Container className="py-20" inset>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div>
+        <Heading level="2" className="text-white-light mb-4"
+          >Our Approach</Heading
+        >
+        <Text as="p" className="text-white-light">
+          Our collective operates on two levels:
+          <br />
+          <br />
+          <ul class="list-disc text-white-light">
+            <li>
+              <Text as="span" className="text-white-light"
+                >Individual Exploration: Each member engages in personal
+                exploration, continually expanding our knowledge and expertise.
+                We come together regularly to share experiences and insights,
+                fostering a rich environment of collaborative learning.</Text
+              >
+            </li>
+            <li>
+              <Text as="span" className="text-white-light"
+                >Collaborative Projects: We undertake group projects that
+                exemplify the principles of Life-centered Design. These projects
+                serve as both practical applications and educational tools,
+                allowing us to disseminate our findings and inspire others in
+                the design community.</Text
+              >
+            </li>
+          </ul>
+        </Text>
+      </div>
+      <div>
+        <Heading level="2" className="text-white-light mb-4"
+          >Our Philosophy</Heading
+        >
+        <Text as="p" className="text-white-light">
+          At the core of Life-centered Design is the belief that design should
+          be holistic, inclusive, and sustainable. We strive to create solutions
+          that are not only innovative but also mindful of the
+          interconnectedness of life. By focusing on the bigger picture, we aim
+          to address complex challenges in ways that promote harmony between
+          human needs and the natural world.
+        </Text>
+      </div>
+      <div>
+        <Heading level="2" className="text-white-light mb-4"
+          >Get Involved</Heading
+        >
+        <Text as="p" className="text-white-light">
+          We invite you to explore our website to learn more about our group and
+          our projects. Whether you're a fellow designer, an educator, or simply
+          someone interested in sustainable design, we welcome you to connect
+          with us. Visit our contact section to reach out to any of our members,
+          and join us in our journey towards a life-centered future.
+        </Text>
+      </div>
     </div>
-    <div class="flex-1">
-      <Heading level="2" className="text-white-light mb-4"
-        >Our Philosophy</Heading
-      >
-      <Text as="p" className="text-white-light">
-        At the core of Life-centered Design is the belief that design should be
-        holistic, inclusive, and sustainable. We strive to create solutions that
-        are not only innovative but also mindful of the interconnectedness of
-        life. By focusing on the bigger picture, we aim to address complex
-        challenges in ways that promote harmony between human needs and the
-        natural world.
-      </Text>
-    </div>
-    <div class="flex-1">
-      <Heading level="2" className="text-white-light mb-4">Get Involved</Heading
-      >
-      <Text as="p" className="text-white-light">
-        We invite you to explore our website to learn more about our group and
-        our projects. Whether you're a fellow designer, an educator, or simply
-        someone interested in sustainable design, we welcome you to connect with
-        us. Visit our contact section to reach out to any of our members, and
-        join us in our journey towards a life-centered future.
-      </Text>
+    <div class="flex flex-col items-stretch sm:items-end mt-8">
+      <Button><Icon name="lucide:arrow-right" />Contact Members</Button>
     </div>
   </Container>
 </section>
