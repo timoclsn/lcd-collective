@@ -3,7 +3,20 @@ import Container from "../design-system/Container.astro";
 ---
 
 <footer>
-  <Container inset className="py-8">
+  <Container inset className="py-8 flex gap-4 justify-between">
+    <ul class="flex items-center gap-4 sm:gap-10 justify-end">
+      <li>
+        <a href="/privacy" class="hover:opacity-80">About us</a>
+      </li>
+      <li>
+        <a href="/imprint" class="hover:opacity-80">Principles</a>
+      </li>
+      <li>
+        <a href="/imprint" class="hover:opacity-80 font-bold"
+          >Collective Resources</a
+        >
+      </li>
+    </ul>
     <ul class="flex items-center gap-4 sm:gap-10 justify-end">
       <li>
         <a href="/privacy" class="hover:opacity-80">Privacy</a>
