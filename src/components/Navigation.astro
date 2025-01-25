@@ -5,17 +5,32 @@ import Text from "../design-system/Text.astro";
 ---
 
 <header>
-  <Container inset className="py-6">
-    <nav>
-      <ul class="flex gap-4 sm:gap-10 items-center">
-        <li class="flex-1">
-          <a href="/" class="hover:opacity-80">
-            <Heading as="span" level="4">Life-centered Design</Heading><br />
-            <Heading as="span" level="4"
-              ><span style="font-weight: 400;">Collective</span>
-            </Heading>
-          </a>
-        </li>
+  <Container inset className="py-6 relative">
+    <nav class="md:flex md:items-center">
+      {/* Logo/Title - Always visible */}
+      <div class="flex-1">
+        <a href="/" class="hover:opacity-80">
+          <Heading as="span" level="4">Life-centered Design</Heading><br />
+          <Heading as="span" level="4"
+            ><span style="font-weight: 400;">Collective</span>
+          </Heading>
+        </a>
+      </div>
+
+      {/* Mobile Menu Button */}
+      <button
+        id="menu-toggle"
+        class="md:hidden absolute top-6 right-4 p-2 rounded-lg hover:bg-gray-100 transition-colors"
+        aria-label="Toggle navigation menu"
+      >
+        <svg id="menu-icon" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path id="menu-open-icon" d="M3 12h18M3 6h18M3 18h18" />
+          <path id="menu-close-icon" d="M18 6L6 18M6 6l12 12" class="hidden" />
+        </svg>
+      </button>
+
+      {/* Desktop Navigation */}
+      <ul class="hidden md:flex gap-4 sm:gap-10 items-center">
         <li>
           <a href="/#about" class="hover:opacity-80">
             <Text>About us</Text>
@@ -27,21 +42,109 @@ import Text from "../design-system/Text.astro";
           </a>
         </li>
         <li>
-          <a href="/#principles" class="hover:opacity-80">
+          <a href="/#case-study" class="hover:opacity-80">
             <Text>Study on LCD tools</Text>
           </a>
         </li>
         <li>
-          <a href="/#principles" class="hover:opacity-80">
+          <a href="/#team" class="hover:opacity-80">
             <Text>The Members</Text>
           </a>
         </li>
         <li>
-          <a href="/#principles" class="hover:opacity-80">
+          <a href="/#resources" class="hover:opacity-80">
             <Text weight="bold">Collective Resources</Text>
           </a>
         </li>
       </ul>
+
+      {/* Mobile Menu Overlay */}
+      <div id="mobile-menu" class="hidden fixed inset-0 bg-white/95 backdrop-blur-sm z-50 transition-opacity">
+        <div class="container h-full flex flex-col items-center justify-center gap-8 text-center">
+          <ul class="space-y-6">
+            <li><a href="/#about" class="text-2xl hover:opacity-80">About us</a></li>
+            <li><a href="/#principles" class="text-2xl hover:opacity-80">Principles</a></li>
+            <li><a href="/#case-study" class="text-2xl hover:opacity-80">Study on LCD tools</a></li>
+            <li><a href="/#team" class="text-2xl hover:opacity-80">The Members</a></li>
+            <li><a href="/#resources" class="text-2xl font-bold hover:opacity-80">Collective Resources</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </Container>
+
+  <script is:inline>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuOpenIcon = document.getElementById('menu-open-icon');
+    const menuCloseIcon = document.getElementById('menu-close-icon');
+    let isMenuOpen = false;
+
+    function toggleMenu() {
+      isMenuOpen = !isMenuOpen;
+      mobileMenu.classList.toggle('hidden');
+      menuOpenIcon.classList.toggle('hidden');
+      menuCloseIcon.classList.toggle('hidden');
+      document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
+      
+      // Animate menu
+      if (isMenuOpen) {
+        mobileMenu.style.opacity = '0';
+        mobileMenu.offsetHeight; // Trigger reflow
+        mobileMenu.style.opacity = '1';
+      }
+    }
+
+    function closeMenu() {
+      if (isMenuOpen) {
+        toggleMenu();
+      }
+    }
+
+    // Toggle menu on button click
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // Close menu on outside click
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) closeMenu();
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+
+    // Close menu when clicking nav links
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+  </script>
+
+  <style is:global>
+    #mobile-menu {
+      opacity: 0;
+      transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    }
+    
+    #mobile-menu:not(.hidden) {
+      opacity: 1;
+      animation: slideIn 0.3s ease-out forwards;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-20px);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #mobile-menu {
+        transition: none;
+        animation: none;
+      }
+    }
+  </style>
 </header>
