@@ -2,12 +2,12 @@
 import Container from "../design-system/Container.astro";
 import Heading from "../design-system/Heading.astro";
 import Text from "../design-system/Text.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <header>
   <Container inset className="py-6 relative">
-    <nav class="lg:flex lg:items-center">
-      {/* Logo/Title - Always visible */}
+    <nav class="flex justify-between">
       <div class="flex-1">
         <a href="/" class="hover:opacity-80">
           <Heading as="span" level="4">Life-centered Design</Heading><br />
@@ -20,13 +20,11 @@ import Text from "../design-system/Text.astro";
       {/* Mobile Menu Button */}
       <button
         id="menu-toggle"
-        class="absolute top-6 right-4 p-2 rounded-lg hover:bg-gray-100 transition-colors z-[51] lg:hidden"
+        class="p-2 transition-colors z-[51] lg:hidden"
         aria-label="Toggle navigation menu"
       >
-        <svg id="menu-icon" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path id="menu-open-icon" d="M3 12h18M3 6h18M3 18h18" />
-          <path id="menu-close-icon" d="M18 6L6 18M6 6l12 12" class="hidden" />
-        </svg>
+        <Icon name="lucide:menu" size={24} id="menu-open-icon" />
+        <Icon name="lucide:x" size={24} id="menu-close-icon" class="hidden" />
       </button>
 
       {/* Desktop Navigation */}
@@ -59,47 +57,62 @@ import Text from "../design-system/Text.astro";
       </ul>
 
       {/* Mobile Menu Overlay */}
-      <div id="mobile-menu" class="hidden fixed inset-0 bg-white/95 backdrop-blur-sm z-50 transition-opacity">
-        <div class="container h-full flex flex-col items-center justify-center gap-8 text-center">
-          <ul class="space-y-6 w-full px-4">
-            <li class="text-center">
-              <a href="/#about" class="text-2xl hover:opacity-80 block">About us</a>
-            </li>
-            <li class="text-center">
-              <a href="/#principles" class="text-2xl hover:opacity-80 block">Principles</a>
-            </li>
-            <li class="text-center">
-              <a href="/#case-study" class="text-2xl hover:opacity-80 block">Study on LCD tools</a>
-            </li>
-            <li class="text-center">
-              <a href="/#team" class="text-2xl hover:opacity-80 block">The Members</a>
-            </li>
-            <li class="text-center">
-              <a href="/#resources" class="text-2xl font-bold hover:opacity-80 block">Collective Resources</a>
-            </li>
-          </ul>
-        </div>
+      <div
+        id="mobile-menu"
+        class="hidden fixed inset-0 bg-white/95 backdrop-blur-sm z-50 transition-opacity"
+      >
+        <ul
+          class="flex flex-col gap-8 items-center justify-center h-full w-full"
+        >
+          <li class="text-center">
+            <a href="/#about" class="text-2xl hover:opacity-80 block"
+              >About us</a
+            >
+          </li>
+          <li class="text-center">
+            <a href="/#principles" class="text-2xl hover:opacity-80 block"
+              >Principles</a
+            >
+          </li>
+          <li class="text-center">
+            <a href="/#case-study" class="text-2xl hover:opacity-80 block"
+              >Study on LCD tools</a
+            >
+          </li>
+          <li class="text-center">
+            <a href="/#team" class="text-2xl hover:opacity-80 block"
+              >The Members</a
+            >
+          </li>
+          <li class="text-center">
+            <a
+              href="/#resources"
+              class="text-2xl font-bold hover:opacity-80 block"
+              >Collective Resources</a
+            >
+          </li>
+        </ul>
       </div>
     </nav>
   </Container>
 
   <script is:inline>
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuOpenIcon = document.getElementById('menu-open-icon');
-    const menuCloseIcon = document.getElementById('menu-close-icon');
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuOpenIcon = document.getElementById("menu-open-icon");
+    const menuCloseIcon = document.getElementById("menu-close-icon");
     let isMenuOpen = false;
 
     function toggleMenu() {
       isMenuOpen = !isMenuOpen;
-      mobileMenu.classList.toggle('hidden');
-      menuOpenIcon.classList.toggle('hidden');
-      menuCloseIcon.classList.toggle('hidden');
-      document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
-      
+      mobileMenu.classList.toggle("hidden");
+      menuOpenIcon.classList.toggle("hidden");
+      menuCloseIcon.classList.toggle("hidden");
+      document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
+
       // Remove opacity transitions
-      menuOpenIcon.style.opacity = '';
-      menuCloseIcon.style.opacity = '';
+      menuOpenIcon.style.opacity = "";
+      menuCloseIcon.style.opacity = "";
     }
 
     function closeMenu() {
@@ -109,21 +122,21 @@ import Text from "../design-system/Text.astro";
     }
 
     // Toggle menu on button click
-    menuToggle.addEventListener('click', toggleMenu);
+    menuToggle.addEventListener("click", toggleMenu);
 
     // Close menu on outside click
-    mobileMenu.addEventListener('click', (e) => {
+    mobileMenu.addEventListener("click", (e) => {
       if (e.target === mobileMenu) closeMenu();
     });
 
     // Close menu on escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
     });
 
     // Close menu when clicking nav links
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', closeMenu);
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
     });
   </script>
 
@@ -131,12 +144,14 @@ import Text from "../design-system/Text.astro";
     #mobile-menu:not(.hidden) + #menu-toggle {
       display: block !important;
     }
-    
+
     #mobile-menu {
       opacity: 0;
-      transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+      transition:
+        opacity 0.3s ease-out,
+        transform 0.3s ease-out;
     }
-    
+
     #mobile-menu:not(.hidden) {
       opacity: 1;
       animation: slideIn 0.3s ease-out forwards;
