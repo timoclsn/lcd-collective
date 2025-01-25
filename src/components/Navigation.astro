@@ -20,7 +20,7 @@ import Text from "../design-system/Text.astro";
       {/* Mobile Menu Button */}
       <button
         id="menu-toggle"
-        class="lg:hidden absolute top-6 right-4 p-2 rounded-lg hover:bg-gray-100 transition-colors z-[51]"
+        class="absolute top-6 right-4 p-2 rounded-lg hover:bg-gray-100 transition-colors z-[51] lg:hidden"
         aria-label="Toggle navigation menu"
       >
         <svg id="menu-icon" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -61,12 +61,22 @@ import Text from "../design-system/Text.astro";
       {/* Mobile Menu Overlay */}
       <div id="mobile-menu" class="hidden fixed inset-0 bg-white/95 backdrop-blur-sm z-50 transition-opacity">
         <div class="container h-full flex flex-col items-center justify-center gap-8 text-center">
-          <ul class="space-y-6">
-            <li><a href="/#about" class="text-2xl hover:opacity-80">About us</a></li>
-            <li><a href="/#principles" class="text-2xl hover:opacity-80">Principles</a></li>
-            <li><a href="/#case-study" class="text-2xl hover:opacity-80">Study on LCD tools</a></li>
-            <li><a href="/#team" class="text-2xl hover:opacity-80">The Members</a></li>
-            <li><a href="/#resources" class="text-2xl font-bold hover:opacity-80">Collective Resources</a></li>
+          <ul class="space-y-6 w-full px-4">
+            <li class="text-center">
+              <a href="/#about" class="text-2xl hover:opacity-80 block">About us</a>
+            </li>
+            <li class="text-center">
+              <a href="/#principles" class="text-2xl hover:opacity-80 block">Principles</a>
+            </li>
+            <li class="text-center">
+              <a href="/#case-study" class="text-2xl hover:opacity-80 block">Study on LCD tools</a>
+            </li>
+            <li class="text-center">
+              <a href="/#team" class="text-2xl hover:opacity-80 block">The Members</a>
+            </li>
+            <li class="text-center">
+              <a href="/#resources" class="text-2xl font-bold hover:opacity-80 block">Collective Resources</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -118,6 +128,10 @@ import Text from "../design-system/Text.astro";
   </script>
 
   <style is:global>
+    #mobile-menu:not(.hidden) + #menu-toggle {
+      display: block !important;
+    }
+    
     #mobile-menu {
       opacity: 0;
       transition: opacity 0.3s ease-out, transform 0.3s ease-out;
