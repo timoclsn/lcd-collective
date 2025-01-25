@@ -3,6 +3,14 @@ import Container from "../design-system/Container.astro";
 import Heading from "../design-system/Heading.astro";
 import Text from "../design-system/Text.astro";
 import { Icon } from "astro-icon/components";
+
+const menuItems = [
+  { href: "/#about", text: "About us" },
+  { href: "/#principles", text: "Principles" },
+  { href: "/#case-study", text: "Study on LCD tools" },
+  { href: "/#team", text: "The Members" },
+  { href: "/#resources", text: "Collective Resources", weight: "bold" },
+];
 ---
 
 <header>
@@ -29,31 +37,13 @@ import { Icon } from "astro-icon/components";
 
       {/* Desktop Navigation */}
       <ul class="hidden lg:flex gap-4 sm:gap-10 items-center">
-        <li>
-          <a href="/#about" class="hover:opacity-80">
-            <Text>About us</Text>
-          </a>
-        </li>
-        <li>
-          <a href="/#principles" class="hover:opacity-80">
-            <Text>Principles</Text>
-          </a>
-        </li>
-        <li>
-          <a href="/#case-study" class="hover:opacity-80">
-            <Text>Study on LCD tools</Text>
-          </a>
-        </li>
-        <li>
-          <a href="/#team" class="hover:opacity-80">
-            <Text>The Members</Text>
-          </a>
-        </li>
-        <li>
-          <a href="/#resources" class="hover:opacity-80">
-            <Text weight="bold">Collective Resources</Text>
-          </a>
-        </li>
+        {menuItems.map(item => (
+          <li>
+            <a href={item.href} class="hover:opacity-80">
+              <Text weight={item.weight}>{item.text}</Text>
+            </a>
+          </li>
+        ))}
       </ul>
 
       {/* Mobile Menu Overlay */}
@@ -61,36 +51,17 @@ import { Icon } from "astro-icon/components";
         id="mobile-menu"
         class="hidden fixed inset-0 bg-white/95 backdrop-blur-sm z-50 transition-opacity"
       >
-        <ul
-          class="flex flex-col gap-8 items-center justify-center h-full w-full"
-        >
-          <li class="text-center">
-            <a href="/#about" class="text-2xl hover:opacity-80 block"
-              >About us</a
-            >
-          </li>
-          <li class="text-center">
-            <a href="/#principles" class="text-2xl hover:opacity-80 block"
-              >Principles</a
-            >
-          </li>
-          <li class="text-center">
-            <a href="/#case-study" class="text-2xl hover:opacity-80 block"
-              >Study on LCD tools</a
-            >
-          </li>
-          <li class="text-center">
-            <a href="/#team" class="text-2xl hover:opacity-80 block"
-              >The Members</a
-            >
-          </li>
-          <li class="text-center">
-            <a
-              href="/#resources"
-              class="text-2xl font-bold hover:opacity-80 block"
-              >Collective Resources</a
-            >
-          </li>
+        <ul class="flex flex-col gap-8 items-center justify-center h-full w-full">
+          {menuItems.map(item => (
+            <li class="text-center">
+              <a
+                href={item.href}
+                class={`text-2xl hover:opacity-80 block ${item.weight === "bold" ? "font-bold" : ""}`}
+              >
+                {item.text}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
