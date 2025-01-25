@@ -5,12 +5,12 @@ import Text from "../design-system/Text.astro";
 import { Icon } from "astro-icon/components";
 
 const menuItems = [
-  { href: "/#about", text: "About us" },
-  { href: "/#principles", text: "Principles" },
-  { href: "/#case-study", text: "Study on LCD tools" },
-  { href: "/#team", text: "The Members" },
+  { href: "/#about", text: "About us", weight: "normal" },
+  { href: "/#principles", text: "Principles", weight: "normal" },
+  { href: "/#case-study", text: "Study on LCD tools", weight: "normal" },
+  { href: "/#team", text: "The Members", weight: "normal" },
   { href: "/#resources", text: "Collective Resources", weight: "bold" },
-];
+] as const;
 ---
 
 <header>
@@ -37,13 +37,15 @@ const menuItems = [
 
       {/* Desktop Navigation */}
       <ul class="hidden lg:flex gap-4 sm:gap-10 items-center">
-        {menuItems.map(item => (
-          <li>
-            <a href={item.href} class="hover:opacity-80">
-              <Text weight={item.weight}>{item.text}</Text>
-            </a>
-          </li>
-        ))}
+        {
+          menuItems.map((item) => (
+            <li>
+              <a href={item.href} class="hover:opacity-80">
+                <Text weight={item.weight}>{item.text}</Text>
+              </a>
+            </li>
+          ))
+        }
       </ul>
 
       {/* Mobile Menu Overlay */}
@@ -51,17 +53,23 @@ const menuItems = [
         id="mobile-menu"
         class="hidden fixed inset-0 bg-white/95 backdrop-blur-sm z-50 transition-opacity"
       >
-        <ul class="flex flex-col gap-8 items-center justify-center h-full w-full">
-          {menuItems.map(item => (
-            <li class="text-center">
-              <a
-                href={item.href}
-                class={`text-2xl hover:opacity-80 block ${item.weight === "bold" ? "font-bold" : ""}`}
-              >
-                {item.text}
-              </a>
-            </li>
-          ))}
+        <ul
+          class="flex flex-col gap-8 items-center justify-center h-full w-full"
+        >
+          {
+            menuItems.map((item) => (
+              <li class="text-center">
+                <a
+                  href={item.href}
+                  class={`text-2xl hover:opacity-80 block ${
+                    item.weight === "bold" ? "font-bold" : ""
+                  }`}
+                >
+                  {item.text}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
     </nav>
