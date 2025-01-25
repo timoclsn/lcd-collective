@@ -20,7 +20,7 @@ import Text from "../design-system/Text.astro";
       {/* Mobile Menu Button */}
       <button
         id="menu-toggle"
-        class="md:hidden absolute top-6 right-4 p-2 rounded-lg hover:bg-gray-100 transition-colors"
+        class="md:hidden fixed top-6 right-4 p-2 rounded-lg hover:bg-gray-100 transition-colors z-[51]"
         aria-label="Toggle navigation menu"
       >
         <svg id="menu-icon" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -83,16 +83,15 @@ import Text from "../design-system/Text.astro";
     function toggleMenu() {
       isMenuOpen = !isMenuOpen;
       mobileMenu.classList.toggle('hidden');
+      menuOpenIcon.style.opacity = isMenuOpen ? '0' : '1';
+      menuCloseIcon.style.opacity = isMenuOpen ? '1' : '0';
       menuOpenIcon.classList.toggle('hidden');
       menuCloseIcon.classList.toggle('hidden');
       document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
       
-      // Animate menu
-      if (isMenuOpen) {
-        mobileMenu.style.opacity = '0';
-        mobileMenu.offsetHeight; // Trigger reflow
-        mobileMenu.style.opacity = '1';
-      }
+      // Animate icons
+      menuOpenIcon.style.transition = 'opacity 0.2s ease';
+      menuCloseIcon.style.transition = 'opacity 0.2s ease';
     }
 
     function closeMenu() {
