@@ -28,7 +28,7 @@ const menuItems = [
       {/* Mobile Menu Button */}
       <button
         id="menu-toggle"
-        class="p-2 transition-colors z-[51] lg:hidden"
+        class="p-2 transition-colors z-51 lg:hidden"
         aria-label="Toggle navigation menu"
       >
         <Icon name="lucide:menu" size={24} id="menu-open-icon" />
@@ -51,7 +51,7 @@ const menuItems = [
       {/* Mobile Menu Overlay */}
       <div
         id="mobile-menu"
-        class="hidden fixed inset-0 bg-white/95 backdrop-blur-sm z-50 transition-opacity"
+        class="hidden fixed inset-0 bg-white/95 backdrop-blur-xs z-50 transition-opacity"
       >
         <ul
           class="flex flex-col gap-8 items-center justify-center h-full w-full"
