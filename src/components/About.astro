@@ -14,12 +14,12 @@ import { Icon } from "astro-icon/components";
     <div class="hidden md:flex absolute inset-0">
       <div class="w-1/2"></div>
       <div class="w-1/2 max-h-[904px] relative">
-        <div class="absolute inset-0 bg-gradient-to-r from-about via-transparent to-transparent z-10"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-about via-transparent to-transparent z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-about from-0% via-transparent via-20% z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-about from-0% via-transparent via-20% z-10"></div>
         <Image
           src={caveImg}
           alt="View from inside a dessert canyon into the sky."
-          class="object-cover object-left w-full h-full"
+          class="object-cover object-left w-full h-full scale-x-[-1]"
         />
       </div>
     </div>
