@@ -25,4 +25,4 @@ links:
     url: https://www.instagram.com/future.scouting/
 ---
 
-Hi, I'm a multi-disciplinary designer developing and teaching life-centred design, futuring, and non-human personas. I founded Life-centred Design Lab and Future Scouting from where I share books, tools, courses, research, and more.
+Hi, I'm a multi-disciplinary designer developing and teaching life-centred design, futuring, and non-human personas. I founded **Life-centred Design Lab** and **Future Scouting** from where I share books, tools, courses, research, and more.
