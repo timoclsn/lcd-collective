@@ -1,13 +1,13 @@
 ---
 name: Estela Duhart Benavides
-location: Stuttgart, Germany
+location: Earth
 services:
-  - UX Design & UI Design
-  - Life-centered Design consultancy
-  - Speaking (occasionally)
+  - Social Design & Biomimicry
+  - Learning
+  - Design Research
 cta:
-  text: Find me here
-  url: https://katharinaclasen.de
+  text: Life-centered Design Lab
+  url: https://lifecentred.design
 links:
   - name: Personal Website
     icon: lucide:link-2
