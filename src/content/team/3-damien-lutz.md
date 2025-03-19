@@ -1,13 +1,12 @@
 ---
 name: Damien Lutz
-location: Stuttgart, Germany
+location: Sydney, Australia
 services:
-  - UX Design & UI Design
-  - Life-centered Design consultancy
-  - Speaking (occasionally)
+  - Life-centred Design Resources & Learning
+  - Designing Futures Resources & Learning
 cta:
-  text: Find me here
-  url: https://katharinaclasen.de
+  text: Life-centered Design Lab
+  url: https://lifecentred.design
 links:
   - name: Future Scouting Website
     icon: lucide:link-2
@@ -26,6 +25,4 @@ links:
     url: https://www.instagram.com/future.scouting/
 ---
 
-Damien Lutz is the Founder of the [Life-centred Design Lab](https://lifecentred.design/) and author of [The Life-centred Design Guide](https://lifecentred.design/the-life-centred-design-guide/), [The Non-human Persona Guide](https://lifecentred.design/non-human-personas/the-non-human-persona-guide/), and [Future Scouting](https://futurescouting.com.au/).
-
-Follow Damien on [LinkedIn](https://www.linkedin.com/in/damien-lutz-36230515) and explore [lifecentred.design](https://lifecentred.design/) for courses, books, tools, projects, and inspiration to design more sustainable and inclusive futures.
+Hi, I'm a multi-disciplinary designer developing and teaching life-centred design, futuring, and non-human personas. I founded Life-centred Design Lab and Future Scouting from where I share books, tools, courses, research, and more.
