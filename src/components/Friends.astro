@@ -7,6 +7,11 @@ import Person from "./Person.astro";
 import PersonGrid from "./PersonGrid.astro";
 
 const friends = await getCollection("friends");
+friends.sort((a, b) => {
+  const aLastName = a.data.name.split(" ").pop() || "";
+  const bLastName = b.data.name.split(" ").pop() || "";
+  return aLastName.localeCompare(bLastName);
+});
 ---
 
 <section id="team" class="bg-white">
