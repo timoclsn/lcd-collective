@@ -65,31 +65,33 @@ const imageName = `${name.split(" ").join("-").toLocaleLowerCase()}.jpg`;
 }
 
 {
-  (cta || links) && (
-    <div class="flex gap-4 items-center justify-between mt-6">
-      {cta && (
-        <Button size="medium" href={cta.url}>
-          {cta.text}
-        </Button>
-      )}
+  cta && (
+    <div class="flex flex-col mt-6">
+      <Button size="medium" href={cta.url}>
+        {cta.text}
+      </Button>
+    </div>
+  )
+}
 
-      {links && (
-        <ul class="flex gap-4 [&_svg]:w-[20px] [&_svg]:h-[20px] items-center">
-          {links.map((link) => (
-            <li>
-              <a
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-team-links hover:opacity-80"
-              >
-                <Icon name={link.icon} />
-                <span class="sr-only">{link.name}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      )}
+{
+  links && (
+    <div class="flex justify-center mt-6">
+      <ul class="flex gap-4 [&_svg]:w-[20px] [&_svg]:h-[20px] items-center">
+        {links.map((link) => (
+          <li>
+            <a
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-team-links hover:opacity-80"
+            >
+              <Icon name={link.icon} />
+              <span class="sr-only">{link.name}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
