@@ -6,15 +6,12 @@ services:
   - Life-centered Design consultancy
   - Speaking (occasionally)
 cta:
-  text: Find me here
-  url: https://katharinaclasen.de
+  text: LifeCenteredDesign.Net
+  url: https://lifecentereddesign.net
 links:
   - name: Personal Website
     icon: lucide:link-2
     url: https://katharinaclasen.de
-  - name: Life-centered Design Resources
-    icon: lucide:clipboard-list
-    url: https://lifecentereddesign.net
   - name: LinkedIn
     icon: lucide:linkedin
     url: https://www.linkedin.com/in/katharina-clasen/
