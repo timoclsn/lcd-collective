@@ -14,8 +14,14 @@ import { Icon } from "astro-icon/components";
     <div class="hidden md:flex absolute inset-0">
       <div class="w-1/2"></div>
       <div class="w-1/2 max-h-[904px] relative">
-        <div class="absolute inset-0 bg-gradient-to-r from-about from-0% via-transparent via-20% z-10"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-about from-0% via-transparent via-20% z-10"></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-about from-0% via-transparent via-20% z-10"
+        >
+        </div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-about from-0% via-transparent via-20% z-10"
+        >
+        </div>
         <Image
           src={caveImg}
           alt="View from inside a dessert canyon into the sky."
@@ -111,7 +117,9 @@ import { Icon } from "astro-icon/components";
       </div>
     </div>
     <div class="flex flex-col items-stretch sm:items-end mt-8">
-      <Button><Icon name="lucide:arrow-right" />Contact Members</Button>
+      <Button href="/#team"
+        ><Icon name="lucide:arrow-right" />Contact Members</Button
+      >
     </div>
   </Container>
 </section>
