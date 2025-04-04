@@ -20,4 +20,4 @@ links:
     url: https://www.instagram.com/katharinaclasen/
 ---
 
-Katharina has been working as a freelancer and lecturer in the UX industry for more than 10 years. Her focus is on providing holistic support to early-stage startups as well as extensive guidance in research, conception, and design for digitalization projects of established companies.
+Katharina has been working as a [freelancer](https://katharinaclasen.com/) and lecturer in the UX industry for more than 10 years. Her focus is on providing holistic support to early-stage startups as well as extensive guidance in research, conception, and design for digitalization projects of established companies.

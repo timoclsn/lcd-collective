@@ -1,6 +1,6 @@
 ---
 name: Estela Duhart Benavides
-location: Earth
+location: Chicago
 services:
   - Social Design & Biomimicry
   - Learning
