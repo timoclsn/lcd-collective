@@ -6,8 +6,8 @@ services:
   - Learning
   - Design Research
 cta:
-  text: Life-centered Design Lab
-  url: https://lifecentred.design
+  text: Find me here
+  url: https://esteladuhart.com/
 links:
   - name: Personal Website
     icon: lucide:link-2
