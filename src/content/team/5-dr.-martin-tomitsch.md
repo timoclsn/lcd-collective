@@ -1,6 +1,6 @@
 ---
 name: Dr. Martin Tomitsch
-location: Australia
+location: Sydney, Australia
 services:
   - Public speaking
   - University collaboration
