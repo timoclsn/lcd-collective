@@ -19,11 +19,11 @@ interface Props {
 
 const { title, description, previewImage, slug } = Astro.props;
 
-const defaultTitle = "Life Centered Design Collective";
+const defaultTitle = "Life-centered Design Collective";
 const pageTitle = !title ? defaultTitle : `${title}  |  ${defaultTitle}`;
 const pageDescription = description
   ? description
-  : "Life Centered Design Collective";
+  : "Life-centered Design Collective";
 const newSlug = slug ? `/${slug}` : "";
 const pagePreviewImage = previewImage ? previewImage : "og-image.png";
 ---
