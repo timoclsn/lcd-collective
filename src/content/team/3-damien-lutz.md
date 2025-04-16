@@ -8,18 +8,15 @@ cta:
   text: Life-centered Design Lab
   url: https://lifecentred.design
 links:
-  - name: Future Scouting Website
+  - name: Personal Website
     icon: lucide:link-2
-    url: https://futurescouting.com.au/
+    url: https://www.damienlutz.com.au/
   - name: LinkedIn
     icon: lucide:linkedin
     url: https://www.linkedin.com/in/damien-lutz-36230515
   - name: Medium
     icon: ph:article-medium
     url: https://medium.com/@damienlutz
-  - name: Twitter
-    icon: lucide:twitter
-    url: https://twitter.com/_the_future
   - name: Instagram
     icon: lucide:instagram
     url: https://www.instagram.com/future.scouting/
