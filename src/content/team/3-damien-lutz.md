@@ -19,7 +19,7 @@ links:
     url: https://medium.com/@damienlutz
   - name: Instagram
     icon: lucide:instagram
-    url: https://www.instagram.com/future.scouting/
+    url: https://www.instagram.com/lifecentred.design/
 ---
 
 Hi, I'm a multi-disciplinary designer developing and teaching life-centred design, futuring, and non-human personas. I founded **Life-centred Design Lab** and **Future Scouting** from where I share books, tools, courses, research, and more.
