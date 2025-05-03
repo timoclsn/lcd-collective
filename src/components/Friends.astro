@@ -7,15 +7,20 @@ import Person from "./Person.astro";
 import PersonGrid from "./PersonGrid.astro";
 
 const friends = await getCollection("friends");
+friends.sort((a, b) => {
+  const aLastName = a.data.name.split(" ").pop() || "";
+  const bLastName = b.data.name.split(" ").pop() || "";
+  return aLastName.localeCompare(bLastName);
+});
 ---
 
-<section id="team" class="bg-grey">
+<section id="team" class="bg-white">
   <Container inset className="pt-20 pb-32">
     <Heading level="2" className="text-text mb-4">
       Friends of the collective
     </Heading>
     <Text as="p" size="large" className="text-text-light mb-20">
-      The people supporting the Life Centered Design Collective whenever
+      The people supporting the Life-centered Design Collective whenever
       possible:
     </Text>
     <PersonGrid>

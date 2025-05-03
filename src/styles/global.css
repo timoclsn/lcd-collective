@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-*: initial;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: "Source Serif 4 Variable", Inter, ui-serif, Georgia, Cambria,
+    "Times New Roman", Times, serif;
+
+  --color-*: initial;
+  --color-transparent: var(--color-transparent);
+  --color-white: #ffffff;
+  --color-white-light: rgba(255, 255, 255, 0.72);
+  --color-header-bg: #060606;
+  --color-text: #18213a;
+  --color-text-light: rgba(24, 33, 58, 0.64);
+  --color-grey: #e7e8f2;
+  --color-principles: #fffaf2;
+  --color-about: #0c0f19;
+  --color-team: #e7e8f2;
+  --color-team-links: #4543be;
+  --color-button: #4543be;
+  --color-case-study: #e9efe8;
+}

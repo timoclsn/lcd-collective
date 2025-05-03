@@ -7,6 +7,11 @@ import Person from "./Person.astro";
 import PersonGrid from "./PersonGrid.astro";
 
 const members = await getCollection("team");
+members.sort((a, b) => {
+  const aLastName = a.data.name.split(" ").pop() || "";
+  const bLastName = b.data.name.split(" ").pop() || "";
+  return aLastName.localeCompare(bLastName);
+});
 ---
 
 <section id="team" class="bg-team">
@@ -15,7 +20,7 @@ const members = await getCollection("team");
       Members of the collective
     </Heading>
     <Text as="p" size="large" className="text-text-light mb-20">
-      The founders of the Life Centered Design Collective, who are driving
+      The founders of the Life-centered Design Collective, who are driving
       things forward:
     </Text>
     <PersonGrid>
@@ -24,7 +29,13 @@ const members = await getCollection("team");
           const { Content } = await render(member);
           return (
             <li>
-              <Person name={member.data.name} links={member.data.links}>
+              <Person
+                name={member.data.name}
+                location={member.data.location}
+                services={member.data.services}
+                cta={member.data.cta}
+                links={member.data.links}
+              >
                 <Content />
               </Person>
             </li>

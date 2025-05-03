@@ -2,31 +2,154 @@
 import Container from "../design-system/Container.astro";
 import Heading from "../design-system/Heading.astro";
 import Text from "../design-system/Text.astro";
+import { Icon } from "astro-icon/components";
+
+const menuItems = [
+  { href: "/#about", text: "About us", weight: "normal" },
+  { href: "/#principles", text: "Principles", weight: "normal" },
+  { href: "/#case-study", text: "Study on LCD Tools", weight: "normal" },
+  { href: "/#team", text: "The Members", weight: "normal" },
+  { href: "/#resources", text: "Collective Resources", weight: "bold" },
+] as const;
 ---
 
 <header>
-  <Container inset className="py-6">
-    <nav>
-      <ul class="flex gap-4 sm:gap-10 items-center">
-        <li class="flex-1">
-          <a href="/" class="hover:opacity-80">
-            <Heading as="span" level="4">Life-centered Design</Heading><br />
-            <Heading as="span" level="4"
-              ><span style="font-weight: 400;">Collective</span>
-            </Heading>
-          </a>
-        </li>
-        <li>
-          <a href="/#about" class="hover:opacity-80">
-            <Text>About us</Text>
-          </a>
-        </li>
-        <li>
-          <a href="/#principles" class="hover:opacity-80">
-            <Text>Principles</Text>
-          </a>
-        </li>
+  <Container inset className="py-6 relative">
+    <nav class="flex justify-between">
+      <div class="flex-1">
+        <a href="/" class="hover:opacity-80">
+          <Heading as="span" level="4">Life-centered Design</Heading><br />
+          <Heading as="span" level="4"
+            ><span style="font-weight: 400;">Collective</span>
+          </Heading>
+        </a>
+      </div>
+
+      {/* Mobile Menu Button */}
+      <button
+        id="menu-toggle"
+        class="p-2 transition-colors z-51 lg:hidden"
+        aria-label="Toggle navigation menu"
+      >
+        <Icon name="lucide:menu" size={24} id="menu-open-icon" />
+        <Icon name="lucide:x" size={24} id="menu-close-icon" class="hidden" />
+      </button>
+
+      {/* Desktop Navigation */}
+      <ul class="hidden lg:flex gap-4 sm:gap-10 items-center">
+        {
+          menuItems.map((item) => (
+            <li>
+              <a href={item.href} class="hover:opacity-80">
+                <Text weight={item.weight}>{item.text}</Text>
+              </a>
+            </li>
+          ))
+        }
       </ul>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        id="mobile-menu"
+        class="hidden fixed inset-0 bg-white/95 backdrop-blur-xs z-50 transition-opacity"
+      >
+        <ul
+          class="flex flex-col gap-8 items-center justify-center h-full w-full"
+        >
+          {
+            menuItems.map((item) => (
+              <li class="text-center">
+                <a
+                  href={item.href}
+                  class={`text-2xl hover:opacity-80 block ${
+                    item.weight === "bold" ? "font-bold" : ""
+                  }`}
+                >
+                  {item.text}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </nav>
   </Container>
+
+  <script is:inline>
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuOpenIcon = document.getElementById("menu-open-icon");
+    const menuCloseIcon = document.getElementById("menu-close-icon");
+    let isMenuOpen = false;
+
+    function toggleMenu() {
+      isMenuOpen = !isMenuOpen;
+      mobileMenu.classList.toggle("hidden");
+      menuOpenIcon.classList.toggle("hidden");
+      menuCloseIcon.classList.toggle("hidden");
+      document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
+
+      // Remove opacity transitions
+      menuOpenIcon.style.opacity = "";
+      menuCloseIcon.style.opacity = "";
+    }
+
+    function closeMenu() {
+      if (isMenuOpen) {
+        toggleMenu();
+      }
+    }
+
+    // Toggle menu on button click
+    menuToggle.addEventListener("click", toggleMenu);
+
+    // Close menu on outside click
+    mobileMenu.addEventListener("click", (e) => {
+      if (e.target === mobileMenu) closeMenu();
+    });
+
+    // Close menu on escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+
+    // Close menu when clicking nav links
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+  </script>
+
+  <style is:global>
+    #mobile-menu:not(.hidden) + #menu-toggle {
+      display: block !important;
+    }
+
+    #mobile-menu {
+      opacity: 0;
+      transition:
+        opacity 0.3s ease-out,
+        transform 0.3s ease-out;
+    }
+
+    #mobile-menu:not(.hidden) {
+      opacity: 1;
+      animation: slideIn 0.3s ease-out forwards;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-20px);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #mobile-menu {
+        transition: none;
+        animation: none;
+      }
+    }
+  </style>
 </header>

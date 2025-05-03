@@ -1,5 +1,13 @@
 ---
 name: Estela Duhart Benavides
+location: Chicago, US
+services:
+  - Social Design & Biomimicry
+  - Design Research
+  - Co-design in Healthcare
+cta:
+  text: Find me here
+  url: https://esteladuhart.com/
 links:
   - name: Personal Website
     icon: lucide:link-2

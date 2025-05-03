@@ -2,9 +2,16 @@
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import Text from "../design-system/Text.astro";
+import Button from "../design-system/Button.astro";
 
 interface Props {
   name: string;
+  location?: string;
+  services?: Array<string>;
+  cta?: {
+    text: string;
+    url: string;
+  };
   links?: Array<{
     name: string;
     icon: string;
@@ -12,9 +19,9 @@ interface Props {
   }>;
 }
 
-const { name, links } = Astro.props;
+const { name, location, services, cta, links } = Astro.props;
 
-const imageName = `${name.split(" ").join("-").toLocaleLowerCase()}.png`;
+const imageName = `${name.split(" ").join("-").toLocaleLowerCase()}.jpg`;
 ---
 
 <Image
@@ -24,28 +31,67 @@ const imageName = `${name.split(" ").join("-").toLocaleLowerCase()}.png`;
   height={350}
   class="mb-4 w-full"
 />
-<Text as="h3" weight="bold" uppercase className="text-text mb-2">
-  {name}
-</Text>
+<div class="flex items-center gap-4 justify-between">
+  <Text as="h3" weight="bold" uppercase className="text-text mb-2 flex-1">
+    {name}
+  </Text>
+  {
+    location && (
+      <div class="flex items-center gap-2">
+        <Icon name="lucide:map-pin" class="flex-none" />
+        <Text as="p" className="text-text-light text-right flex-1">
+          {location}
+        </Text>
+      </div>
+    )
+  }
+</div>
+
 <div class="text-text-light prose">
   <slot />
 </div>
+
+{
+  services && (
+    <div class="mt-6">
+      <Text as="h2" weight="bold">
+        Contact me for:
+      </Text>
+      <Text as="p" className="text-text-light">
+        {services.join(" • ")}
+      </Text>
+    </div>
+  )
+}
+
+{
+  cta && (
+    <div class="flex flex-col mt-6">
+      <Button size="medium" href={cta.url}>
+        {cta.text}
+      </Button>
+    </div>
+  )
+}
+
 {
   links && (
-    <ul class="flex gap-4 [&_svg]:w-[20px] [&_svg]:h-[20px] mt-6 items-center">
-      {links.map((link) => (
-        <li>
-          <a
-            href={link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-team-links hover:opacity-80"
-          >
-            <Icon name={link.icon} />
-            <span class="sr-only">{link.name}</span>
-          </a>
-        </li>
-      ))}
-    </ul>
+    <div class="flex mt-6">
+      <ul class="flex gap-4 [&_svg]:w-[20px] [&_svg]:h-[20px] items-center">
+        {links.map((link) => (
+          <li>
+            <a
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-team-links hover:opacity-80"
+            >
+              <Icon name={link.icon} />
+              <span class="sr-only">{link.name}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }

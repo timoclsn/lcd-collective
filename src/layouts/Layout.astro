@@ -8,6 +8,7 @@ import Favicons from "../components/Favicons.astro";
 import Footer from "../components/Footer.astro";
 import Navigation from "../components/Navigation.astro";
 import SEO from "../components/SEO.astro";
+import "../styles/global.css";
 
 interface Props {
   title?: string;
@@ -18,11 +19,11 @@ interface Props {
 
 const { title, description, previewImage, slug } = Astro.props;
 
-const defaultTitle = "Life Centered Design Collective";
+const defaultTitle = "Life-centered Design Collective";
 const pageTitle = !title ? defaultTitle : `${title}  |  ${defaultTitle}`;
 const pageDescription = description
   ? description
-  : "Life Centered Design Collective";
+  : "Life-centered Design Collective";
 const newSlug = slug ? `/${slug}` : "";
 const pagePreviewImage = previewImage ? previewImage : "og-image.png";
 ---
