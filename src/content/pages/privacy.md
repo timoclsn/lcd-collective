@@ -72,8 +72,7 @@ As a newsletter provider, we use the marketing platform „Mailchimp“ – Rock
 
 To best protect your privacy we set up our analytics tools to only store anonymized data. The tools we use are:
 
-- [Vercel Analytics](https://vercel.com/analytics) to evaluate the website performance (like loading times)
-- [Splitbee Analytics](https://splitbee.io) to track page visits (e.g.: How many visitors were there? What devices were used? Were did the visitors come from? Which pages did they visit?) Wie viele Besucher:innen? Mit welchen Geräten? Woher kommen die Besucher:innen? Welche Seiten haben sie besucht?). If you want to see what data is visualized there you can have a look at our public analytics dashboard.
+- No analytics tools at the moment.
 
 ## Rights of the individual
 
