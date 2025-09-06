@@ -72,7 +72,7 @@ As a newsletter provider, we use the marketing platform „Mailchimp“ – Rock
 
 To best protect your privacy we set up our analytics tools to only store anonymized data. The tools we use are:
 
-- No analytics tools at the moment.
+- [One Dollar Stats](https://onedollarstats.com/) to track page visits (e.g.: How many visitors were there? What devices were used? Were did the visitors come from? Which pages did they visit?).
 
 ## Rights of the individual
 
